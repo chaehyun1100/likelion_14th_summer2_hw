@@ -2,14 +2,14 @@ import { NavLink, Outlet, useParams } from "react-router-dom";
 import styled from "styled-components";
 import dummyData from "../../data/dummy_data.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faSearch } from "@fortawesome/free-solid-svg-icons";
+import logoImg from "/src/assets/logo.webp";
 
 const Container = styled.div`
     width: 100%;
     min-height: 100vh;
     background-color: #f8f9fa;
+    margin-bottom: 50px;
 `;
 
 const HeaderWrapper = styled.header`
@@ -108,11 +108,7 @@ const Layout = () => {
                         {post ?
                         (
                             <>
-                                <FontAwesomeIcon 
-                                icon={faSquareCheck} 
-                                size="lg"
-                                style={{color: "rgb(27, 29, 33)",marginRight: "8px"}} 
-                                />
+                                <img src={logoImg} alt="로고" style={{ width: "24px", marginRight: "10px" }} />
                                 {`${post.author.name}.log`}
                             </>
                         ) : ("velog")
