@@ -5,3 +5,6 @@
   flex-grow: 1;
   min-height: 100svh;
 }
+* {
+  box-sizing: border-box;
+}
