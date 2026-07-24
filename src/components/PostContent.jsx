@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    
-    width: 768px;
-`;
+
 const Title = styled.h1`
     font-size: 48px;
     line-height: normal;
@@ -65,24 +60,22 @@ const Content = styled.div`
 const PostContent = ({ post }) => {
     return (
         <>
-            <Container>
-                <Title>{post.title}</Title>
+            <Title>{post.title}</Title>
 
-                <SubInfo>
-                    <SubLeft>
-                        <AuthorDate>
-                            {post.author.name}
-                        </AuthorDate>
-                        <Dot>·</Dot>
-                        <AuthorName>{post.date}</AuthorName>
-                    </SubLeft>
-                    <Follow>팔로우</Follow>
-                </SubInfo>
+            <SubInfo>
+                <SubLeft>
+                    <AuthorDate>
+                        {post.author.name}
+                    </AuthorDate>
+                    <Dot>·</Dot>
+                    <AuthorName>{post.date}</AuthorName>
+                </SubLeft>
+                <Follow>팔로우</Follow>
+            </SubInfo>
 
-                <Summary>{post.summary}</Summary>
-                <Content>{post.content}</Content>
+            <Summary>{post.summary}</Summary>
+            <Content>{post.content}</Content>
 
-            </Container>
         </>
     )
 }
