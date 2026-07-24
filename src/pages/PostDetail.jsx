@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faShareNodes } from "@fortawesome/free-solid-svg-icons";
-
+import Profile from "../components/Profile.jsx";
 
 const Container = styled.div`
     display: flex;
@@ -103,26 +103,6 @@ const Content = styled.div`
     margin: 18px 0px 100px;
     white-space: pre-line;
 `;
-const Profile = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`;
-const ProfileLeft = styled.div`
-    display: flex;
-    align-items: center;
-`;
-const ProfileAvatar = styled.img`
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-`;
-const ProfileName = styled.div`
-    font-size: 24px;
-    margin: 0px 16px;
-    color: #212529;
-    font-weight: bold;
-`;
 
 const PostDetail = () => {
     const {id} = useParams();
@@ -164,13 +144,7 @@ const PostDetail = () => {
                         <Summary>{post.summary}</Summary>
                         <Content>{post.content}</Content>
 
-                        <Profile>
-                            <ProfileLeft>
-                                <ProfileAvatar src={post.author.avatar}/>
-                                <ProfileName>{post.author.name}</ProfileName>
-                            </ProfileLeft>
-                            <Follow>팔로우</Follow>
-                        </Profile>
+                        <Profile author={post.author} />
                     </Body>
                 </Container>
             </>
